@@ -14,7 +14,7 @@ interface ProductsSectionProps {
 }
 
 const DESKTOP_ITEMS_PER_PAGE = 12;
-const MOBILE_ITEMS_PER_PAGE = 6;
+const MOBILE_ITEMS_PER_PAGE = 8;
 
 export default function ProductsSection({
   products,
@@ -75,18 +75,18 @@ export default function ProductsSection({
   return (
     <section id="products" className="scroll-mt-24">
       {/* Section header */}
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex items-center justify-between mb-6 sm:mb-8">
         <div>
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
+          <h2 className="text-xl sm:text-3xl font-bold text-foreground">
             Tất Cả Sản Phẩm
           </h2>
-          <p className="mt-2 text-text-secondary">
+          <p className="mt-1 text-xs sm:text-sm text-text-secondary">
             Khám phá {products.length} sản phẩm chất lượng cao
           </p>
         </div>
 
         {totalPages > 1 && (
-          <span className="hidden sm:inline-block text-xs font-medium text-text-muted px-3 py-1 rounded-full bg-card border border-border-subtle">
+          <span className="hidden sm:inline-block text-xs font-medium text-text-muted px-3 py-1 rounded-full bg-white border border-border-subtle shadow-xs">
             Trang {safeCurrentPage} / {totalPages}
           </span>
         )}

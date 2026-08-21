@@ -22,7 +22,7 @@ export default function ImageGallery({
 
   if (validImages.length === 0) {
     return (
-      <div className="aspect-square rounded-xl bg-card border border-border-subtle flex items-center justify-center">
+      <div className="aspect-square rounded-xl bg-slate-100 border border-border-subtle flex items-center justify-center">
         <ProductImage src="" alt={productName} />
       </div>
     );
@@ -40,7 +40,7 @@ export default function ImageGallery({
   return (
     <div className="space-y-4">
       {/* Main Image */}
-      <div className="relative aspect-square rounded-xl overflow-hidden bg-card border border-border-subtle group">
+      <div className="relative aspect-square rounded-xl overflow-hidden bg-white border border-border-subtle group shadow-xs">
         <ProductImage
           src={validImages[activeIndex]}
           alt={`${productName} - Ảnh ${activeIndex + 1}`}

@@ -7,7 +7,7 @@ export default function NotFound() {
       <div className="text-center px-4">
         {/* 404 Number */}
         <div className="relative mb-8">
-          <span className="text-[10rem] sm:text-[14rem] font-black leading-none tracking-tighter text-border-subtle/30 select-none">
+          <span className="text-[10rem] sm:text-[14rem] font-black leading-none tracking-tighter text-slate-200 select-none">
             404
           </span>
           <div className="absolute inset-0 flex items-center justify-center">
@@ -26,14 +26,14 @@ export default function NotFound() {
         <div className="flex flex-wrap justify-center gap-4">
           <Link
             href="/"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-accent-amber to-accent-orange text-white font-semibold shadow-lg shadow-accent-amber/20 hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-accent-orange to-accent-amber text-white font-semibold shadow-md shadow-orange-500/20 hover:shadow-lg hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
           >
             <Home className="w-4 h-4" />
             Trang chủ
           </Link>
           <Link
             href="/#products"
-            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border-default text-text-secondary hover:text-foreground hover:border-accent-amber/40 transition-all duration-300 font-medium"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border-default bg-white text-text-secondary hover:text-foreground hover:border-accent-orange/40 hover:bg-slate-50 shadow-xs transition-all duration-300 font-medium"
           >
             <ArrowLeft className="w-4 h-4" />
             Xem sản phẩm

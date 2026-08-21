@@ -19,10 +19,10 @@ export default function CategoryFilter({
       <button
         onClick={() => onCategoryChange("")}
         className={cn(
-          "inline-flex items-center gap-1.5 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 border",
+          "inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 border",
           activeCategory === ""
-            ? "bg-gradient-to-r from-accent-amber to-accent-orange text-white border-transparent shadow-md shadow-accent-amber/20"
-            : "bg-card text-text-secondary border-border-subtle hover:text-foreground hover:border-accent-amber/30"
+            ? "bg-gradient-to-r from-accent-orange to-accent-amber text-white border-transparent shadow-xs font-semibold"
+            : "bg-white text-text-secondary border-border-subtle hover:text-foreground hover:border-accent-orange/40 hover:bg-slate-50 shadow-xs"
         )}
       >
         <LayoutGrid className="w-3.5 h-3.5" />
@@ -33,10 +33,10 @@ export default function CategoryFilter({
           key={cat}
           onClick={() => onCategoryChange(cat)}
           className={cn(
-            "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 border",
+            "px-3.5 sm:px-4 py-1.5 sm:py-2 rounded-lg text-xs sm:text-sm font-medium transition-all duration-200 border",
             activeCategory === cat
-              ? "bg-gradient-to-r from-accent-amber to-accent-orange text-white border-transparent shadow-md shadow-accent-amber/20"
-              : "bg-card text-text-secondary border-border-subtle hover:text-foreground hover:border-accent-amber/30"
+              ? "bg-gradient-to-r from-accent-orange to-accent-amber text-white border-transparent shadow-xs font-semibold"
+              : "bg-white text-text-secondary border-border-subtle hover:text-foreground hover:border-accent-orange/40 hover:bg-slate-50 shadow-xs"
           )}
         >
           {cat}

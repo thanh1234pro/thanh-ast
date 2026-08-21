@@ -19,23 +19,23 @@ export default function HeroBanner() {
       <div
         className="absolute inset-0 opacity-[0.03]"
         style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)`,
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgba(0,0,0,0.4) 1px, transparent 0)`,
           backgroundSize: "40px 40px",
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-24">
         <div className="max-w-3xl">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-accent-amber/20 bg-accent-amber/5 mb-8 animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-accent-amber/20 bg-amber-50 mb-6 sm:mb-8 animate-fade-in">
             <span className="w-2 h-2 rounded-full bg-accent-emerald animate-pulse" />
-            <span className="text-xs font-medium text-accent-amber tracking-wide">
+            <span className="text-xs font-semibold text-accent-amber tracking-wide">
               CHẤT LƯỢNG CAO — UY TÍN — GIÁ TỐT TẠI HUẾ &amp; TOÀN QUỐC
             </span>
           </div>
 
           {/* Heading */}
-          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.15] tracking-tight mb-6 animate-slide-up">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold leading-[1.15] tracking-tight mb-6 animate-slide-up text-foreground">
             Phụ Kiện <span className="gradient-text">Slingshot Fishing</span>
             <br />
             <span className="text-foreground/90 font-bold text-2xl sm:text-3xl lg:text-4xl">
@@ -44,15 +44,15 @@ export default function HeroBanner() {
           </h1>
 
           {/* Description */}
-          <p className="text-base sm:text-lg text-text-secondary leading-relaxed max-w-2xl mb-10 animate-slide-up stagger-2">
-            Chuyên cung cấp phụ kiện <span className="text-foreground font-medium">Slingshot Fishing</span> chuyên nghiệp, các dòng <span className="text-foreground font-medium">kính phân cực</span> cao cấp chống chói, <span className="text-foreground font-medium">dây thun tròn &amp; dẹp</span> độ đàn hồi vượt trội. Nhận <span className="text-accent-amber font-medium">Order hàng nội địa Trung Quốc</span> theo yêu cầu nhanh chóng, uy tín.
+          <p className="text-base sm:text-lg text-text-secondary leading-relaxed max-w-2xl mb-8 sm:mb-10 animate-slide-up stagger-2">
+            Chuyên cung cấp phụ kiện <span className="text-foreground font-semibold">Slingshot Fishing</span> chuyên nghiệp, các dòng <span className="text-foreground font-semibold">kính phân cực</span> cao cấp chống chói, <span className="text-foreground font-semibold">dây thun tròn &amp; dẹp</span> độ đàn hồi vượt trội. Nhận <span className="text-accent-orange font-semibold">Order hàng nội địa Trung Quốc</span> theo yêu cầu nhanh chóng, uy tín.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center gap-4 mb-14 animate-slide-up stagger-3">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-10 sm:mb-14 animate-slide-up stagger-3">
             <Link
               href="#products"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-gradient-to-r from-accent-amber to-accent-orange text-white font-semibold shadow-lg shadow-accent-amber/20 hover:shadow-xl hover:shadow-accent-amber/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+              className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-gradient-to-r from-accent-orange to-accent-amber text-white font-semibold shadow-md shadow-orange-500/20 hover:shadow-lg hover:shadow-orange-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
             >
               <ShoppingBag className="w-4 h-4" />
               Xem sản phẩm
@@ -62,14 +62,14 @@ export default function HeroBanner() {
               href="https://zalo.me/0983087375"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-border-default text-text-secondary hover:text-foreground hover:border-accent-amber/40 hover:bg-white/5 transition-all duration-300 font-medium"
+              className="inline-flex items-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl border border-border-default bg-white text-text-secondary hover:text-foreground hover:border-accent-orange/40 hover:bg-slate-50 shadow-xs transition-all duration-300 font-medium"
             >
               Tư vấn &amp; Order Zalo
             </a>
           </div>
 
           {/* Feature pills */}
-          <div className="flex flex-wrap gap-3 sm:gap-4 animate-slide-up stagger-4">
+          <div className="flex flex-wrap gap-2.5 sm:gap-4 animate-slide-up stagger-4">
             {[
               { icon: Target, label: "Độ chính xác & bền bỉ" },
               { icon: Sparkles, label: "Nhận Order TQ theo yêu cầu" },
@@ -78,12 +78,12 @@ export default function HeroBanner() {
             ].map((feat) => (
               <div
                 key={feat.label}
-                className="flex items-center gap-2.5 text-xs sm:text-sm text-text-secondary bg-card/70 border border-border-subtle/80 px-3.5 py-2 rounded-xl backdrop-blur-sm"
+                className="flex items-center gap-2.5 text-xs sm:text-sm text-text-secondary bg-white border border-border-subtle px-3 sm:px-3.5 py-2 rounded-xl shadow-xs"
               >
-                <div className="w-7 h-7 rounded-lg bg-accent-amber/10 flex items-center justify-center flex-shrink-0">
+                <div className="w-7 h-7 rounded-lg bg-amber-50 flex items-center justify-center flex-shrink-0">
                   <feat.icon className="w-3.5 h-3.5 text-accent-amber" />
                 </div>
-                <span>{feat.label}</span>
+                <span className="font-medium">{feat.label}</span>
               </div>
             ))}
           </div>

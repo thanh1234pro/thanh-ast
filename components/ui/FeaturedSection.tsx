@@ -35,24 +35,24 @@ export default function FeaturedSection({ products }: FeaturedSectionProps) {
   };
 
   return (
-    <section id="featured-products" className="py-16 sm:py-20 scroll-mt-24">
-      <div className="flex items-center justify-between mb-8">
+    <section id="featured-products" className="py-10 sm:py-16 scroll-mt-24">
+      <div className="flex items-center justify-between mb-6 sm:mb-8">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-accent-amber/10 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-xl bg-amber-50 flex items-center justify-center flex-shrink-0">
             <Sparkles className="w-5 h-5 text-accent-amber" />
           </div>
           <div>
-            <h2 className="text-2xl sm:text-3xl font-bold text-foreground">
+            <h2 className="text-xl sm:text-3xl font-bold text-foreground">
               Sản Phẩm Nổi Bật
             </h2>
-            <p className="text-text-secondary text-sm mt-0.5">
+            <p className="text-text-secondary text-xs sm:text-sm mt-0.5">
               Được lựa chọn kỹ lưỡng, chất lượng hàng đầu ({products.length} sản phẩm)
             </p>
           </div>
         </div>
 
         {totalPages > 1 && (
-          <span className="hidden sm:inline-block text-xs font-medium text-text-muted px-3 py-1 rounded-full bg-card border border-border-subtle">
+          <span className="hidden sm:inline-block text-xs font-medium text-text-muted px-3 py-1 rounded-full bg-white border border-border-subtle shadow-xs">
             Trang {safeCurrentPage} / {totalPages}
           </span>
         )}

@@ -1,36 +1,37 @@
 @import "tailwindcss";
 
 /* ============================
-   DESIGN SYSTEM — Dark Premium
+   DESIGN SYSTEM — Clean White (Shopee/E-commerce Style)
    ============================ */
 
 :root {
-  --bg-primary: #030712;
-  --bg-surface: #111827;
-  --bg-card: #1f2937;
-  --bg-card-hover: #374151;
-  --border-subtle: #374151;
-  --border-default: #4b5563;
+  --bg-primary: #fff8f3;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --bg-card-hover: #fffaf5;
+  --border-subtle: #f3e8de;
+  --border-default: #e5d5c5;
 
-  --text-primary: #f9fafb;
-  --text-secondary: #9ca3af;
-  --text-muted: #6b7280;
+  --text-primary: #111827;
+  --text-secondary: #4b5563;
+  --text-muted: #9ca3af;
 
-  --accent-amber: #f59e0b;
-  --accent-orange: #ea580c;
+  --accent-amber: #d97706;
+  --accent-orange: #ee4d2d;
   --accent-emerald: #10b981;
   --accent-red: #ef4444;
 
-  --gradient-primary: linear-gradient(135deg, #f59e0b, #ea580c);
-  --gradient-hero: linear-gradient(135deg, #1e1b4b 0%, #0f172a 50%, #042f2e 100%);
-  --gradient-card: linear-gradient(145deg, rgba(31, 41, 55, 0.6), rgba(17, 24, 39, 0.8));
+  --gradient-primary: linear-gradient(135deg, #ee4d2d, #f59e0b);
+  --gradient-page: linear-gradient(135deg, #fed7aa 0%, #ffedd5 20%, #fff7ed 45%, #ffffff 80%);
+  --gradient-hero: linear-gradient(135deg, rgba(254, 215, 170, 0.4) 0%, rgba(255, 247, 237, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
+  --gradient-card: linear-gradient(145deg, #ffffff, #fffaf5);
 
-  --glass-bg: rgba(17, 24, 39, 0.7);
-  --glass-border: rgba(75, 85, 99, 0.3);
+  --glass-bg: rgba(255, 255, 255, 0.88);
+  --glass-border: rgba(254, 215, 170, 0.5);
 
-  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.3);
-  --shadow-card-hover: 0 8px 40px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 30px rgba(245, 158, 11, 0.15);
+  --shadow-card: 0 1px 3px rgba(234, 88, 12, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-card-hover: 0 10px 25px -5px rgba(234, 88, 12, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 25px rgba(238, 77, 45, 0.15);
 
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
@@ -80,7 +81,9 @@ html {
 }
 
 body {
-  background: var(--bg-primary);
+  background: linear-gradient(135deg, #fed7aa 0%, #ffedd5 20%, #fff7ed 45%, #ffffff 80%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   color: var(--text-primary);
   font-family: var(--font-inter, "Inter", system-ui, sans-serif);
   -webkit-font-smoothing: antialiased;
@@ -172,10 +175,10 @@ body {
 }
 
 .glass-strong {
-  background: rgba(17, 24, 39, 0.85);
+  background: rgba(255, 255, 255, 0.92);
   backdrop-filter: blur(24px) saturate(200%);
   -webkit-backdrop-filter: blur(24px) saturate(200%);
-  border: 1px solid var(--glass-border);
+  border-bottom: 1px solid var(--border-subtle);
 }
 
 /* ============================

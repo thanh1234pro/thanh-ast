@@ -92,7 +92,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Zalo"
-                className="w-10 h-10 rounded-lg bg-card hover:bg-card-hover border border-border-subtle flex items-center justify-center text-text-secondary hover:text-[#0068FF] transition-all duration-200 hover:border-[#0068FF]/30"
+                className="w-10 h-10 rounded-lg bg-slate-50 hover:bg-slate-100 border border-border-subtle flex items-center justify-center text-text-secondary hover:text-[#0068FF] transition-all duration-200 hover:border-[#0068FF]/40 shadow-xs"
               >
                 <ZaloIcon className="w-5 h-5" />
               </a>
@@ -107,7 +107,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="w-10 h-10 rounded-lg bg-card hover:bg-card-hover border border-border-subtle flex items-center justify-center text-text-secondary hover:text-accent-amber transition-all duration-200 hover:border-accent-amber/30"
+                  className="w-10 h-10 rounded-lg bg-slate-50 hover:bg-slate-100 border border-border-subtle flex items-center justify-center text-text-secondary hover:text-accent-orange transition-all duration-200 hover:border-accent-orange/40 shadow-xs"
                 >
                   <social.icon className="w-4 h-4" />
                 </a>

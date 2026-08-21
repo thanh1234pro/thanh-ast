@@ -173,14 +173,14 @@ export default async function ProductPage(
                 ].map((feat) => (
                   <div
                     key={feat.label}
-                    className="flex items-center gap-3 p-3 rounded-lg bg-card border border-border-subtle"
+                    className="flex items-center gap-3 p-3.5 rounded-xl bg-white border border-border-subtle shadow-xs"
                   >
-                    <div className="w-9 h-9 rounded-lg bg-accent-amber/10 flex items-center justify-center flex-shrink-0">
+                    <div className="w-9 h-9 rounded-lg bg-amber-50 flex items-center justify-center flex-shrink-0">
                       <feat.icon className="w-4 h-4 text-accent-amber" />
                     </div>
                     <div>
                       <p className="text-xs text-text-muted">{feat.label}</p>
-                      <p className="text-sm font-medium text-foreground">
+                      <p className="text-sm font-semibold text-foreground">
                         {feat.value}
                       </p>
                     </div>
@@ -195,7 +195,7 @@ export default async function ProductPage(
                     <Package className="w-5 h-5 text-accent-amber" />
                     Mô tả sản phẩm
                   </h2>
-                  <div className="text-text-secondary leading-relaxed whitespace-pre-line">
+                  <div className="text-text-secondary leading-relaxed whitespace-pre-line bg-white p-4 sm:p-5 rounded-xl border border-border-subtle">
                     {product.description}
                   </div>
                 </div>
@@ -207,18 +207,18 @@ export default async function ProductPage(
                   <h2 className="text-lg font-semibold text-foreground mb-3">
                     Thông số kỹ thuật
                   </h2>
-                  <div className="rounded-xl border border-border-subtle overflow-hidden">
+                  <div className="rounded-xl border border-border-subtle overflow-hidden shadow-xs">
                     {Object.entries(product.specs).map(
                       ([key, value], index) => (
                         <div
                           key={key}
-                          className={`flex items-center justify-between px-4 py-3 text-sm ${index % 2 === 0 ? "bg-card" : "bg-surface"
+                          className={`flex items-center justify-between px-4 py-3 text-sm ${index % 2 === 0 ? "bg-white" : "bg-slate-50"
                             }`}
                         >
                           <span className="text-text-secondary font-medium">
                             {key}
                           </span>
-                          <span className="text-foreground">{value}</span>
+                          <span className="text-foreground font-semibold">{value}</span>
                         </div>
                       )
                     )}
@@ -232,13 +232,13 @@ export default async function ProductPage(
                   product={product}
                   size="lg"
                   text="Mua hàng qua Zalo"
-                  className="w-full sm:w-auto text-lg shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/35"
+                  className="w-full sm:w-auto text-base sm:text-lg shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30"
                 />
                 <a
                   href="tel:0983087375"
-                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-4 rounded-xl border border-border-default bg-card hover:bg-card-hover text-foreground font-semibold text-base transition-all duration-300 hover:border-accent-amber/40"
+                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto px-6 py-3.5 sm:py-4 rounded-xl border border-border-default bg-white hover:bg-slate-50 text-foreground font-semibold text-base transition-all duration-300 hover:border-accent-orange/40 shadow-xs"
                 >
-                  <Phone className="w-4 h-4 text-accent-amber" />
+                  <Phone className="w-4 h-4 text-accent-orange" />
                   Gọi 0983 087 375
                 </a>
               </div>

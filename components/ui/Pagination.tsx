@@ -66,7 +66,7 @@ export default function Pagination({
       <button
         onClick={() => onPageChange(currentPage - 1)}
         disabled={currentPage === 1}
-        className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-card border border-border-subtle text-text-secondary hover:text-foreground hover:border-accent-amber/40 hover:bg-card-hover transition-all duration-200 disabled:opacity-30 disabled:pointer-events-none"
+        className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white border border-border-subtle text-text-secondary hover:text-foreground hover:border-accent-orange/40 hover:bg-slate-50 shadow-xs transition-all duration-200 disabled:opacity-30 disabled:pointer-events-none"
         aria-label="Trang trước"
       >
         <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -95,8 +95,8 @@ export default function Pagination({
             className={cn(
               "flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl text-sm font-semibold transition-all duration-200",
               isActive
-                ? "bg-gradient-to-r from-accent-amber to-accent-orange text-white shadow-md shadow-accent-amber/25 scale-105"
-                : "bg-card border border-border-subtle text-text-secondary hover:text-foreground hover:border-accent-amber/40 hover:bg-card-hover"
+                ? "bg-gradient-to-r from-accent-orange to-accent-amber text-white shadow-sm font-bold scale-105"
+                : "bg-white border border-border-subtle text-text-secondary hover:text-foreground hover:border-accent-orange/40 hover:bg-slate-50 shadow-xs"
             )}
           >
             {pageNum}
@@ -108,7 +108,7 @@ export default function Pagination({
       <button
         onClick={() => onPageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
-        className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-card border border-border-subtle text-text-secondary hover:text-foreground hover:border-accent-amber/40 hover:bg-card-hover transition-all duration-200 disabled:opacity-30 disabled:pointer-events-none"
+        className="flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white border border-border-subtle text-text-secondary hover:text-foreground hover:border-accent-orange/40 hover:bg-slate-50 shadow-xs transition-all duration-200 disabled:opacity-30 disabled:pointer-events-none"
         aria-label="Trang sau"
       >
         <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />

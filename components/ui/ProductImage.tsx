@@ -37,9 +37,9 @@ export default function ProductImage({
 
   if (hasError || isInvalidUrl) {
     return (
-      <div className="w-full h-full flex flex-col items-center justify-center bg-gradient-to-br from-card to-surface text-text-muted/40 p-4">
-        <Crosshair className="w-10 h-10 mb-2 opacity-50" />
-        <span className="text-xs text-center text-text-muted/60 font-medium">
+      <div className="w-full h-full flex flex-col items-center justify-center bg-slate-100 text-slate-400 p-4">
+        <Crosshair className="w-8 h-8 sm:w-10 sm:h-10 mb-2 opacity-40 text-slate-500" />
+        <span className="text-[11px] sm:text-xs text-center text-slate-500 font-medium">
           Thạnh AST
         </span>
       </div>
