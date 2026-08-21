@@ -5,12 +5,12 @@
    ============================ */
 
 :root {
-  --bg-primary: #fff8f3;
+  --bg-primary: #ffffff;
   --bg-surface: #ffffff;
   --bg-card: #ffffff;
-  --bg-card-hover: #fffaf5;
-  --border-subtle: #f3e8de;
-  --border-default: #e5d5c5;
+  --bg-card-hover: #f9fafb;
+  --border-subtle: #e5e7eb;
+  --border-default: #d1d5db;
 
   --text-primary: #111827;
   --text-secondary: #4b5563;
@@ -22,16 +22,15 @@
   --accent-red: #ef4444;
 
   --gradient-primary: linear-gradient(135deg, #ee4d2d, #f59e0b);
-  --gradient-page: linear-gradient(135deg, #fed7aa 0%, #ffedd5 20%, #fff7ed 45%, #ffffff 80%);
-  --gradient-hero: linear-gradient(135deg, rgba(254, 215, 170, 0.4) 0%, rgba(255, 247, 237, 0.2) 50%, rgba(255, 255, 255, 0) 100%);
-  --gradient-card: linear-gradient(145deg, #ffffff, #fffaf5);
+  --gradient-hero: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+  --gradient-card: linear-gradient(145deg, #ffffff, #fafafa);
 
-  --glass-bg: rgba(255, 255, 255, 0.88);
-  --glass-border: rgba(254, 215, 170, 0.5);
+  --glass-bg: rgba(255, 255, 255, 0.95);
+  --glass-border: rgba(229, 231, 235, 0.8);
 
-  --shadow-card: 0 1px 3px rgba(234, 88, 12, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03);
-  --shadow-card-hover: 0 10px 25px -5px rgba(234, 88, 12, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
-  --shadow-glow: 0 0 25px rgba(238, 77, 45, 0.15);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-card-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+  --shadow-glow: 0 0 25px rgba(238, 77, 45, 0.12);
 
   --radius-sm: 0.5rem;
   --radius-md: 0.75rem;
@@ -81,9 +80,7 @@ html {
 }
 
 body {
-  background: linear-gradient(135deg, #fed7aa 0%, #ffedd5 20%, #fff7ed 45%, #ffffff 80%);
-  background-attachment: fixed;
-  background-repeat: no-repeat;
+  background: #ffffff;
   color: var(--text-primary);
   font-family: var(--font-inter, "Inter", system-ui, sans-serif);
   -webkit-font-smoothing: antialiased;

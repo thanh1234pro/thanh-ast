@@ -71,7 +71,7 @@ export default function Header() {
               href="https://zalo.me/0983087375"
               target="_blank"
               rel="noopener noreferrer"
-              className="ml-2 inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#0068FF] hover:bg-[#0055d4] text-white text-sm font-semibold shadow-xs transition-all duration-200"
+              className="ml-2 inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#4ca6e3] hover:bg-[#d45d52] text-white text-sm font-semibold shadow-xs transition-all duration-200"
             >
               Liên hệ Zalo
             </a>

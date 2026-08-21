@@ -4,27 +4,23 @@ import { useState } from "react";
 import { Product } from "@/lib/types";
 import ProductGrid from "@/components/ui/ProductGrid";
 import Pagination from "@/components/ui/Pagination";
-import { useIsMobile } from "@/lib/useIsMobile";
 import { Sparkles } from "lucide-react";
 
 interface FeaturedSectionProps {
   products: Product[];
 }
 
-const DESKTOP_ITEMS_PER_PAGE = 8;
-const MOBILE_ITEMS_PER_PAGE = 6;
+const ITEMS_PER_PAGE = 8;
 
 export default function FeaturedSection({ products }: FeaturedSectionProps) {
   const [currentPage, setCurrentPage] = useState(1);
-  const isMobile = useIsMobile(640);
 
   if (products.length === 0) return null;
 
-  const itemsPerPage = isMobile ? MOBILE_ITEMS_PER_PAGE : DESKTOP_ITEMS_PER_PAGE;
-  const totalPages = Math.ceil(products.length / itemsPerPage);
+  const totalPages = Math.ceil(products.length / ITEMS_PER_PAGE);
   const safeCurrentPage = Math.min(currentPage, Math.max(1, totalPages));
-  const startIndex = (safeCurrentPage - 1) * itemsPerPage;
-  const currentProducts = products.slice(startIndex, startIndex + itemsPerPage);
+  const startIndex = (safeCurrentPage - 1) * ITEMS_PER_PAGE;
+  const currentProducts = products.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);

@@ -71,7 +71,7 @@ export default function ImageGallery({
 
         {/* Image counter */}
         {validImages.length > 1 && (
-          <div className="absolute bottom-3 right-3 px-3 py-1 rounded-full glass text-xs font-medium text-white">
+          <div className="absolute bottom-3 right-3 px-3 py-1 rounded-full glass text-xs font-medium">
             {activeIndex + 1} / {validImages.length}
           </div>
         )}

@@ -38,7 +38,7 @@ export default function BuyZaloButton({
       type="button"
       onClick={() => openZaloOrder(product)}
       className={cn(
-        "inline-flex items-center justify-center rounded-xl bg-[#0068FF] hover:bg-[#0055d4] text-white font-semibold shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer",
+        "inline-flex items-center justify-center rounded-xl bg-[#4ca6e3] hover:bg-[#d45d52] text-white font-semibold shadow-md shadow-blue-500/20 hover:shadow-lg hover:shadow-blue-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200 cursor-pointer",
         sizeClasses[size],
         className
       )}
