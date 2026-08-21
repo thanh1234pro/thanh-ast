@@ -40,19 +40,36 @@ export async function generateMetadata(
     return { title: "Sản phẩm không tồn tại" };
   }
 
-  const title = `${product.name} — Ná Cao Su Chất Lượng`;
+  const title = `${product.name}`;
   const description =
     product.description ||
-    `Mua ${product.name} tại Thạnh AST. Giá ${formatPrice(product.price)}. Chất lượng cao, giao hàng toàn quốc.`;
+    `Mua ${product.name} chính hãng giá tốt ${formatPrice(product.price)} tại Thạnh AST. Phụ kiện Slingshot Fishing & kính phân cực, giao hàng toàn quốc.`;
+
+  const validImages = product.images.filter(
+    (img) => img && (img.startsWith("http://") || img.startsWith("https://") || img.startsWith("/"))
+  );
+  const ogImages = validImages.length > 0 ? validImages : ["/og-image.jpeg"];
 
   return {
     title,
     description,
+    alternates: {
+      canonical: `https://thanhast.com/product/${product.slug}`,
+    },
     openGraph: {
-      title,
+      title: `${product.name} — Thạnh AST`,
       description,
       type: "website",
-      images: product.images.filter((img) => img.startsWith("http")),
+      url: `https://thanhast.com/product/${product.slug}`,
+      siteName: "Thạnh AST",
+      locale: "vi_VN",
+      images: ogImages,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${product.name} — Thạnh AST`,
+      description,
+      images: ogImages,
     },
   };
 }
