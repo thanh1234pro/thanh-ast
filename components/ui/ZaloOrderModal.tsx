@@ -172,7 +172,7 @@ export default function ZaloOrderModal() {
         </div>
 
         {/* Copy Action Buttons (Image & Text) */}
-        <div className="grid grid-cols-2 gap-2.5 mb-4">
+        {/* <div className="grid grid-cols-2 gap-2.5 mb-4">
           <button
             type="button"
             onClick={copyImageOnly}
@@ -208,10 +208,10 @@ export default function ZaloOrderModal() {
               </>
             )}
           </button>
-        </div>
+        </div> */}
 
         {/* Copied Text Preview Box */}
-        <div className="mb-4">
+        {/* <div className="mb-4">
           <div className="flex items-center justify-between text-xs text-text-muted mb-1.5">
             <span>Nội dung đã chép vào bộ nhớ:</span>
             <button
@@ -225,7 +225,7 @@ export default function ZaloOrderModal() {
           <div className="p-3 rounded-xl bg-slate-50 border border-border-subtle text-xs text-slate-700 leading-relaxed select-all whitespace-pre-line break-all max-h-32 overflow-y-auto font-mono">
             {copiedText}
           </div>
-        </div>
+        </div> */}
 
         {/* 3 Step Instruction Guide */}
         <div className="mb-6 space-y-2 text-xs text-text-secondary bg-slate-50 p-3 rounded-xl border border-border-subtle">
