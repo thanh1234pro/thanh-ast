@@ -132,13 +132,25 @@ export default async function ProductPage(
 
             {/* Right: Product Info */}
             <div className="animate-slide-up stagger-2">
-              {/* Category */}
-              {product.category && (
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-amber/10 text-accent-amber text-xs font-medium mb-4">
-                  <Tag className="w-3 h-3" />
-                  {product.category}
-                </div>
-              )}
+              {/* Category & Status Badges */}
+              <div className="flex flex-wrap items-center gap-2 mb-4">
+                {product.category && (
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-accent-amber/10 text-accent-amber text-xs font-medium">
+                    <Tag className="w-3 h-3" />
+                    {product.category}
+                  </div>
+                )}
+                {product.out_of_stock && (
+                  <span className="px-2.5 py-1 rounded-full bg-red-100 text-red-700 font-bold text-xs">
+                    Hết hàng
+                  </span>
+                )}
+                {typeof product.pre_order === "number" && product.pre_order > 0 && (
+                  <span className="px-2.5 py-1 rounded-full bg-amber-50 text-amber-800 border border-amber-200 font-medium text-xs">
+                    ⏰ Cần đặt trước {product.pre_order} ngày
+                  </span>
+                )}
+              </div>
 
               {/* Name */}
               <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-foreground leading-tight">

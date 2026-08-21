@@ -44,19 +44,35 @@ export default function ProductCard({ product, index = 0 }: ProductCardProps) {
             </div>
           </div>
 
-          {/* Badges */}
-          <div className="absolute top-2 left-2 sm:top-3 sm:left-3 flex flex-col gap-1.5">
-            {product.featured && (
-              <span className="badge-featured text-[10px] sm:text-xs px-1.5 py-0.5 sm:px-2 sm:py-1">
+          {/* Badges Left (Featured, Sale) */}
+          <div className="absolute top-1.5 left-1.5 sm:top-2 sm:left-2 flex flex-col gap-1 z-10 pointer-events-none">
+            {/* {product.featured && (
+              <span className="badge-featured text-[9px] sm:text-xs px-1.5 py-0.5 sm:px-2 sm:py-0.5 shadow-xs whitespace-nowrap">
                 ⭐ Nổi bật
               </span>
-            )}
+            )} */}
             {discount > 0 && (
-              <span className="badge-sale text-[10px] sm:text-xs px-1.5 py-0.5 sm:px-2 sm:py-1">
+              <span className="badge-sale text-[9px] sm:text-xs px-1.5 py-0.5 sm:px-2 sm:py-0.5 shadow-xs whitespace-nowrap">
                 -{discount}%
               </span>
             )}
           </div>
+
+          {/* Out of stock badge (Top Right) */}
+          {product.out_of_stock && (
+            <div className="absolute top-1.5 right-1.5 sm:top-2 sm:right-2 z-10 pointer-events-none">
+              <span className="inline-block bg-red-600 text-white font-bold text-[9px] sm:text-xs px-1.5 py-0.5 sm:px-2 sm:py-0.5 rounded shadow-xs whitespace-nowrap">
+                Hết hàng
+              </span>
+            </div>
+          )}
+
+          {/* Pre-order notice (Bottom of image) */}
+          {typeof product.pre_order === "number" && product.pre_order > 0 && (
+            <div className="absolute bottom-0 inset-x-0 bg-black/65 backdrop-blur-xs text-white text-[10px] sm:text-xs font-medium py-1 px-1.5 text-center truncate z-10 pointer-events-none tracking-tight">
+              Cần đặt trước {product.pre_order} ngày
+            </div>
+          )}
         </div>
 
         {/* Info */}

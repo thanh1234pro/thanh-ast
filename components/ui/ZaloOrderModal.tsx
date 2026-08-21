@@ -148,13 +148,23 @@ export default function ZaloOrderModal() {
             <h4 className="text-sm font-semibold text-foreground truncate">
               {product.name}
             </h4>
-            <div className="flex items-baseline gap-2 mt-1">
+            <div className="flex flex-wrap items-baseline gap-2 mt-1">
               <span className="text-base font-bold text-accent-orange">
                 {formatPrice(product.price)}
               </span>
               {discount > 0 && (
                 <span className="text-xs text-text-muted line-through">
                   {formatPrice(product.original_price)}
+                </span>
+              )}
+              {product.out_of_stock && (
+                <span className="px-2 py-0.5 rounded bg-red-100 text-red-700 font-bold text-[10px]">
+                  Hết hàng
+                </span>
+              )}
+              {typeof product.pre_order === "number" && product.pre_order > 0 && (
+                <span className="px-2 py-0.5 rounded bg-amber-50 text-amber-800 border border-amber-200 text-[10px] font-medium">
+                  Cần đặt trước {product.pre_order} ngày
                 </span>
               )}
             </div>

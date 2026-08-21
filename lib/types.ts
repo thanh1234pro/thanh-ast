@@ -9,4 +9,6 @@ export interface Product {
   description: string;
   specs: Record<string, string>;
   featured?: boolean;
+  out_of_stock?: boolean;
+  pre_order?: number;
 }

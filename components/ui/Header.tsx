@@ -83,7 +83,7 @@ export default function Header() {
               href="https://zalo.me/0983087375"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-2.5 py-1.5 rounded-lg bg-[#0068FF] text-white text-xs font-semibold"
+              className="px-2.5 py-1.5 rounded-lg bg-[#4ca6e3] hover:bg-[#d45d52] text-white text-xs font-semibold"
             >
               Zalo
             </a>

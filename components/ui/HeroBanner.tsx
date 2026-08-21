@@ -52,7 +52,7 @@ export default function HeroBanner() {
           <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-10 sm:mb-14 animate-slide-up stagger-3">
             <Link
               href="#products"
-              className="inline-flex items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-gradient-to-r from-accent-orange to-accent-amber text-white font-semibold shadow-md shadow-orange-500/20 hover:shadow-lg hover:shadow-orange-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
+              className="inline-flex w-full sm:w-auto justify-center items-center gap-2 px-6 sm:px-7 py-3 sm:py-3.5 rounded-xl bg-gradient-to-r from-accent-orange to-accent-amber text-white font-semibold shadow-md shadow-orange-500/20 hover:shadow-lg hover:shadow-orange-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all duration-300"
             >
               <ShoppingBag className="w-4 h-4" />
               Xem sản phẩm
@@ -62,14 +62,14 @@ export default function HeroBanner() {
               href="https://zalo.me/0983087375"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl border border-border-default bg-white text-text-secondary hover:text-foreground hover:border-accent-orange/40 hover:bg-slate-50 shadow-xs transition-all duration-300 font-medium"
+              className="inline-flex w-full sm:w-auto justify-center items-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl border border-border-default bg-white text-text-secondary hover:text-foreground hover:border-accent-orange/40 hover:bg-slate-50 shadow-xs transition-all duration-300 font-medium"
             >
               Tư vấn &amp; Order Zalo
             </a>
           </div>
 
           {/* Feature pills */}
-          <div className="flex flex-wrap gap-2.5 sm:gap-4 animate-slide-up stagger-4">
+          {/* <div className="flex flex-wrap gap-2.5 sm:gap-4 animate-slide-up stagger-4">
             {[
               { icon: Target, label: "Độ chính xác & bền bỉ" },
               { icon: Sparkles, label: "Nhận Order TQ theo yêu cầu" },
@@ -86,7 +86,7 @@ export default function HeroBanner() {
                 <span className="font-medium">{feat.label}</span>
               </div>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

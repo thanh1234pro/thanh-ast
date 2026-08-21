@@ -45,6 +45,15 @@ export async function getProducts(forceRefresh: boolean = false): Promise<Produc
           item.featured === true ||
           item.featured === 1 ||
           String(item.featured).toLowerCase() === "true",
+        out_of_stock:
+          item.out_of_stock === true ||
+          item.out_of_stock === 1 ||
+          item.out_of_stock === "1" ||
+          String(item.out_of_stock).toLowerCase() === "true",
+        pre_order:
+          item.pre_order !== undefined && item.pre_order !== null && !isNaN(Number(item.pre_order))
+            ? Number(item.pre_order)
+            : 0,
       })
     );
 

@@ -102,9 +102,15 @@ export function ZaloOrderProvider({ children }: { children: ReactNode }) {
         : `${origin}${imageUrl.startsWith("/") ? "" : "/"}${imageUrl}`
       : "";
 
+    const statusNote = prod.out_of_stock
+      ? "\n• Tình trạng: Hết hàng (Cần tư vấn / Đặt trước)"
+      : typeof prod.pre_order === "number" && prod.pre_order > 0
+        ? `\n• Tình trạng: Cần đặt trước (${prod.pre_order} ngày)`
+        : "";
+
     return `Chào Shop Thạnh AST, mình muốn tư vấn & đặt mua sản phẩm:
 • Tên sản phẩm: ${prod.name}
-• Giá: ${formatPrice(prod.price)}
+• Giá: ${formatPrice(prod.price)}${statusNote}
 • Link chi tiết: ${productUrl}${fullImageUrl ? `\n• Link ảnh sản phẩm: ${fullImageUrl}` : ""}`;
   }, []);
 
