@@ -38,12 +38,15 @@ export default function ProductsSection({
   const filteredProducts = useMemo(() => {
     let result = products;
 
-    if (activeCategory) {
-      result = result.filter((p) => p.category === activeCategory);
+    if (activeCategory.trim()) {
+      const targetCat = activeCategory.trim().toLowerCase();
+      result = result.filter(
+        (p) => p.category.trim().toLowerCase() === targetCat
+      );
     }
 
     if (searchQuery.trim()) {
-      const q = searchQuery.toLowerCase();
+      const q = searchQuery.trim().toLowerCase();
       result = result.filter(
         (p) =>
           p.name.toLowerCase().includes(q) ||
@@ -95,7 +98,7 @@ export default function ProductsSection({
       {/* Filters */}
       <div
         id="categories"
-        className="flex flex-col sm:flex-row gap-4 mb-8 scroll-mt-24"
+        className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8 scroll-mt-24"
       >
         <div className="flex-1 overflow-x-auto">
           <CategoryFilter

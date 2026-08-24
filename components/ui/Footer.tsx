@@ -47,6 +47,7 @@ export default function Footer() {
                 { href: "/", label: "Trang chủ" },
                 { href: "/#products", label: "Tất cả sản phẩm" },
                 { href: "/#categories", label: "Danh mục" },
+                { href: "/blog", label: "Kinh nghiệm & Blogs" },
               ].map((link) => (
                 <li key={link.href}>
                   <Link

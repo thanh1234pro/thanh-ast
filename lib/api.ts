@@ -25,36 +25,53 @@ export async function getProducts(forceRefresh: boolean = false): Promise<Produc
 
     const data = await res.json();
 
-    // Normalize: ensure id and slug are strings
+    const seenIds = new Set<string>();
+    const seenSlugs = new Set<string>();
+
+    // Normalize: ensure id and slug are unique strings, trim category
     const products: Product[] = (Array.isArray(data) ? data : []).map(
-      (item: Record<string, unknown>) => ({
-        ...item,
-        id: String(item.id ?? ""),
-        slug: String(item.slug ?? item.id ?? ""),
-        name: String(item.name ?? ""),
-        category: String(item.category ?? ""),
-        price: Number(item.price ?? 0),
-        original_price: Number(item.original_price ?? 0),
-        images: Array.isArray(item.images) ? item.images.map(String) : [],
-        description: String(item.description ?? ""),
-        specs:
-          item.specs && typeof item.specs === "object"
-            ? (item.specs as Record<string, string>)
-            : {},
-        featured:
-          item.featured === true ||
-          item.featured === 1 ||
-          String(item.featured).toLowerCase() === "true",
-        out_of_stock:
-          item.out_of_stock === true ||
-          item.out_of_stock === 1 ||
-          item.out_of_stock === "1" ||
-          String(item.out_of_stock).toLowerCase() === "true",
-        pre_order:
-          item.pre_order !== undefined && item.pre_order !== null && !isNaN(Number(item.pre_order))
-            ? Number(item.pre_order)
-            : 0,
-      })
+      (item: Record<string, unknown>, index: number) => {
+        let rawId = String(item.id ?? index + 1).trim();
+        if (!rawId || seenIds.has(rawId)) {
+          rawId = `${rawId || "product"}-${index + 1}`;
+        }
+        seenIds.add(rawId);
+
+        let rawSlug = String(item.slug ?? item.id ?? index + 1).trim();
+        if (!rawSlug || seenSlugs.has(rawSlug)) {
+          rawSlug = `${rawSlug || "product"}-${index + 1}`;
+        }
+        seenSlugs.add(rawSlug);
+
+        return {
+          ...item,
+          id: rawId,
+          slug: rawSlug,
+          name: String(item.name ?? "").trim(),
+          category: String(item.category ?? "").trim(),
+          price: Number(item.price ?? 0),
+          original_price: Number(item.original_price ?? 0),
+          images: Array.isArray(item.images) ? item.images.map(String) : [],
+          description: String(item.description ?? ""),
+          specs:
+            item.specs && typeof item.specs === "object"
+              ? (item.specs as Record<string, string>)
+              : {},
+          featured:
+            item.featured === true ||
+            item.featured === 1 ||
+            String(item.featured).toLowerCase() === "true",
+          out_of_stock:
+            item.out_of_stock === true ||
+            item.out_of_stock === 1 ||
+            item.out_of_stock === "1" ||
+            String(item.out_of_stock).toLowerCase() === "true",
+          pre_order:
+            item.pre_order !== undefined && item.pre_order !== null && !isNaN(Number(item.pre_order))
+              ? Number(item.pre_order)
+              : 0,
+        };
+      }
     );
 
     buildTimeCache = products;
@@ -69,12 +86,17 @@ export async function getProductBySlug(
   slug: string
 ): Promise<Product | undefined> {
   const products = await getProducts();
-  return products.find((p) => p.slug === slug);
+  const normalized = decodeURIComponent(slug).trim().toLowerCase();
+  return products.find((p) => p.slug.trim().toLowerCase() === normalized);
 }
 
 export async function getCategories(): Promise<string[]> {
   const products = await getProducts();
-  const categories = new Set(products.map((p) => p.category).filter(Boolean));
+  const categories = new Set(
+    products
+      .map((p) => p.category.trim())
+      .filter((cat) => cat.length > 0)
+  );
   return Array.from(categories);
 }
 

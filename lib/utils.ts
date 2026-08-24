@@ -20,3 +20,19 @@ export function calculateDiscount(
   if (originalPrice <= 0 || price >= originalPrice) return 0;
   return Math.round(((originalPrice - price) / originalPrice) * 100);
 }
+
+export function formatDate(dateString: string): string {
+  if (!dateString) return "";
+  try {
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) return dateString;
+    return new Intl.DateTimeFormat("vi-VN", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric",
+    }).format(date);
+  } catch {
+    return dateString;
+  }
+}
+

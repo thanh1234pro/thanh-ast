@@ -7,10 +7,9 @@ import { Menu, X, ShoppingBag } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  // { href: "/", label: "Trang chủ" },
   { href: "/#products", label: "Sản phẩm" },
   { href: "/#featured-products", label: "Sản phẩm nổi bật" },
-  // { href: "/#categories", label: "Danh mục" },
+  { href: "/blog", label: "Blogs" },
 ];
 
 export default function Header() {
