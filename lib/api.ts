@@ -2,21 +2,13 @@ import { Product } from "./types";
 
 const DATA_URL = process.env.NEXT_PUBLIC_JSON_DATA_URL || "";
 
-let buildTimeCache: Product[] | null = null;
-
 export async function getProducts(forceRefresh: boolean = false): Promise<Product[]> {
   const isDev = process.env.NODE_ENV === "development";
 
-  // In production / build time, use memory cache to avoid spamming the API
-  if (!isDev && !forceRefresh && buildTimeCache) {
-    return buildTimeCache;
-  }
-
   try {
     const res = await fetch(DATA_URL, {
-      // In dev mode, always fetch fresh data on reload. In prod/build, cache or revalidate.
       cache: isDev || forceRefresh ? "no-store" : "default",
-      next: isDev || forceRefresh ? { revalidate: 0 } : { revalidate: 900 },
+      next: isDev || forceRefresh ? { revalidate: 0 } : { revalidate: 1800, tags: ["products"] },
     });
 
     if (!res.ok) {
@@ -74,11 +66,10 @@ export async function getProducts(forceRefresh: boolean = false): Promise<Produc
       }
     );
 
-    buildTimeCache = products;
     return products;
   } catch (error) {
     console.error("Error fetching products:", error);
-    return buildTimeCache || [];
+    return [];
   }
 }
 

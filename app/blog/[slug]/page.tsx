@@ -18,7 +18,7 @@ import { formatDate } from "@/lib/utils";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 import BlogCard from "@/components/BlogCard";
 
-export const revalidate = 60;
+export const revalidate = 1800;
 
 interface PageProps {
   params: Promise<{ slug: string }>;

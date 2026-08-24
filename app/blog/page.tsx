@@ -5,7 +5,7 @@ import { getBlogs } from "@/lib/blogs";
 import BlogCard from "@/components/BlogCard";
 import Breadcrumb from "@/components/ui/Breadcrumb";
 
-export const revalidate = 60;
+export const revalidate = 1800;
 
 export const metadata: Metadata = {
   title: "Kinh Nghiệm & Chia Sẻ | Thạnh AST",

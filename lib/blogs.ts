@@ -2,11 +2,6 @@ import { BlogPost } from "@/types/blog";
 
 const BLOGS_API_URL = process.env.NEXT_PUBLIC_BLOGS_API_URL || "";
 
-let buildTimeBlogsCache: BlogPost[] | null = null;
-
-/**
- * Fetch and return all published blog posts from the API with ISR (revalidate: 60).
- */
 export async function getBlogs(forceRefresh: boolean = false): Promise<BlogPost[]> {
   const isDev = process.env.NODE_ENV === "development";
 
@@ -15,15 +10,10 @@ export async function getBlogs(forceRefresh: boolean = false): Promise<BlogPost[
     return [];
   }
 
-  // Use memory cache during production build if available
-  if (!isDev && !forceRefresh && buildTimeBlogsCache) {
-    return buildTimeBlogsCache;
-  }
-
   try {
     const res = await fetch(BLOGS_API_URL, {
       cache: isDev || forceRefresh ? "no-store" : "default",
-      next: isDev || forceRefresh ? { revalidate: 0 } : { revalidate: 60 },
+      next: isDev || forceRefresh ? { revalidate: 0 } : { revalidate: 1800, tags: ["blogs"] },
     });
 
     if (!res.ok) {
@@ -64,11 +54,10 @@ export async function getBlogs(forceRefresh: boolean = false): Promise<BlogPost[
       return timeB - timeA;
     });
 
-    buildTimeBlogsCache = blogs;
     return blogs;
   } catch (error) {
     console.error("Error fetching blogs from API:", error);
-    return buildTimeBlogsCache || [];
+    return [];
   }
 }
 

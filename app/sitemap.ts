@@ -2,6 +2,8 @@ import { MetadataRoute } from "next";
 import { getProducts } from "@/lib/api";
 import { getBlogs } from "@/lib/blogs";
 
+export const revalidate = 1800;
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://thanhast.com";
   const [products, blogs] = await Promise.all([getProducts(), getBlogs()]);

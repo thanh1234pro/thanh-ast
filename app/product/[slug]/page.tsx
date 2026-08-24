@@ -21,6 +21,8 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 
+export const revalidate = 1800;
+
 // Generate static params for all products at build time (SSG)
 export async function generateStaticParams() {
   const products = await getProducts();
